@@ -27,7 +27,6 @@
 (display "(to-string \"pippo\"): ")
 (write (to-string "pippo")) (newline)
 
-
 (define (types-or-num . arguments)
   (map (lambda (type) 
 	 (if (member type '(integer real rational complex)) 
@@ -63,7 +62,3 @@
 (pp (+ 10 20 30 " foo " #\b #\a #\r))
 
 (pp (+ (make-pos 10 20) (make-pos 30 40) (make-pos -10 -20)))
-
-
-
-  
