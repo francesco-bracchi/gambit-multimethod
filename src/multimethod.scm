@@ -15,7 +15,7 @@
     (table-set! *-multi-* multi (lambda (key value) (table-set! store key value)))
     multi))
   
-(define (type value)
+(define (type value . ignore)
   (cond
     ((##structure? value) (##structure-type value))
     ((pair? value) 'pair)

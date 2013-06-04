@@ -18,8 +18,14 @@
    "\"y\":" (to-string (pos-y p))
    "}"))
 
+(define-method (to-string n) 'integer 
+	(string-append "number:" (number->string n)))
+
 (display "(to-string 102): ")
 (write (to-string 102)) (newline)
+
+(display "(to-string 102.1): ")
+(write (to-string 102.1)) (newline)
 
 (display "(to-string (make-pos 10 20)): ")
 (write (to-string (make-pos 10 20))) (newline)

@@ -20,3 +20,9 @@
   (let ((name (car name-formals))
 	(formals (cdr name-formals)))
     `(method-set! ,name ,value (lambda ,formals ,@rest))))
+
+#;(begin (define-multi (=? a b) types)
+       (define-multi (=? a b) types
+	 (eq? a b))
+       (define-method (=? a b) '(string string) 
+	 (string=? a b)))
