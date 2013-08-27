@@ -65,6 +65,27 @@
   (make-pos (+ (pos-x a) (pos-x b))
 	    (+ (pos-y a) (pos-y b))))
 
+(display "(+ 10 20 30 \" foo \" #\\b #\\a #\\r): ")
 (pp (+ 10 20 30 " foo " #\b #\a #\r))
 
+(display "(+ (make-pos 10 20) (make-pos 30 40) (make-pos -10 -20))")
 (pp (+ (make-pos 10 20) (make-pos 30 40) (make-pos -10 -20)))
+
+(define-multi (foo a b) types 
+  '(do not know))
+
+(define-method (foo a b) '(integer integer)
+  '(integer and integer))
+
+(define-method (foo a b) '(integer string)
+  '(integer and string))
+
+(display "(foo 10 'symbol): ")
+(write (foo 10 'symbol)) (newline)
+
+(display "(foo 10 20): ")
+(write (foo 10 20)) (newline)
+
+(display "(foo 10 \"bar\"): ")
+(write (foo 10 "bar")) (newline)
+  
